@@ -1,0 +1,38 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.account {
+  display: flex;
+  gap: 8px;
+}
+
+main {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.product-wrapper {
+  /* width: 300px; */
+  display: flex;
+  flex-direction: column;
+  border: solid 2px grey;
+}
+
+.product-wrapper > img {
+  width: 100%;
+}
+
+/* .product-wrapper > h6 { */
+/*   font-size: 6rem; */
+/*   font-weight: bold; */
+/* } */
