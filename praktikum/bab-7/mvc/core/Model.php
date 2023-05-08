@@ -1,6 +1,6 @@
 <?php
 
-require_once("../mvc/core/Database.php");
+require_once "../mvc/core/Database.php";
 
 class Model
 {

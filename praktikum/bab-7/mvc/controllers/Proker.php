@@ -1,6 +1,6 @@
 <?php
 
-require_once("../mvc/models/ProkerModel.php");
+require_once "../mvc/models/ProkerModel.php";
 
 class Proker extends Controller
 {
