@@ -4,16 +4,16 @@ include_once("m_programKerja.php");
 
 class c_programKerja
 {
-  public $model;
+  private $model;
 
-  public function __construct($nama)
+  public function __construct()
   {
     $this->model = new m_programKerja();
   }
 
   public function invoke()
   {
-    $proker = $this->model->getSemuaProgramKerja();
+    $daftarProker = $this->model->getSemuaProgramKerja()[0];
     include "v_programKerja.php";
   }
 }

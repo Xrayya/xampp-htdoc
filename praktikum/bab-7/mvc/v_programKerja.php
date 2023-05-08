@@ -8,8 +8,8 @@
 
 <body>
   <h1>Daftar Program Kerja BEM</h1>
-  <table>
-    <thead>
+  <table border="1" cellspacing="0" cellpadding="4">
+    <thead style="font-weight: bold; background-color: lightgray;">
       <tr>
         <td>No</td>
         <td>Nama Program Kerja</td>
@@ -17,13 +17,13 @@
       </tr>
     </thead>
     <tbody>
-      <?php
-      echo "<tr>";
-      echo "<td>$proker[nomorProgram]</td>";
-      echo "<td>$proker[namaProgram]</td>";
-      echo "<td>$proker[suratKeterangan]</td>";
-      echo "</tr>";
-      ?>
+      <?php foreach ($daftarProker as $proker) : ?>
+        <tr>
+          <td><?= $proker['nomorProgram'] ?></td>
+          <td><?= $proker['namaProgram'] ?></td>
+          <td><?= $proker['suratKeterangan'] ?></td>
+        </tr>
+      <?php endforeach; ?>
     </tbody>
   </table>
 </body>
