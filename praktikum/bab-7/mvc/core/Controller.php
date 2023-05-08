@@ -2,6 +2,7 @@
 
 class Controller
 {
+    protected $model;
     public function loadView($view, $data = [])
     {
         require_once "../mvc/views/$view.php";

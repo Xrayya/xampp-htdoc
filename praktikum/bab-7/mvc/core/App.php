@@ -2,19 +2,25 @@
 
 class App
 {
-    private $controller = "Proker";
+    private $controller = "Home";
     private $method = "index";
     private $params = [];
 
     public function __construct()
     {
+        session_start();
+
+        if (isset($_SESSION['nim'])) {
+            $this->controller = "Proker";
+        }
+
         $url = $this->parseUrl();
-        if (file_exists("../mvc/controllers/$url[0].php")) {
+        if (file_exists("../mvc/controllers/$url[0].php") && isset($_SESSION['nim'])) {
             $this->controller = $url[0];
             unset($url[0]);
         }
 
-        require_once("../mvc/controllers/$this->controller.php");
+        require_once "../mvc/controllers/$this->controller.php";
         $this->controller = new $this->controller();
 
         if (method_exists($this->controller, $url[1])) {

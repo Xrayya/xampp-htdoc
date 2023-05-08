@@ -1,4 +1,4 @@
-<h1>Tambah Program Kerja BEM</h1>
+<h2>Tambah Program Kerja BEM</h2>
 <form action="index.php?url=Proker/tambahProker" method="post" style="display: flex; flex-direction: column; gap: 4px;">
     <div>
         <label for="nomorProgram">Nomor program:</label>

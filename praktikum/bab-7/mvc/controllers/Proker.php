@@ -4,7 +4,6 @@ require_once "../mvc/models/ProkerModel.php";
 
 class Proker extends Controller
 {
-    private $model;
     public function __construct()
     {
         $this->model = $this->instantiateModel("ProkerModel");
@@ -16,7 +15,7 @@ class Proker extends Controller
         $data = $this->model->getSemuaProgramKerja();
 
         $this->loadView("template/header", $data);
-        $this->loadView("index", $data);
+        $this->loadView("daftarProker", $data);
         $this->loadView("template/footer");
     }
 
