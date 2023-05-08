@@ -4,8 +4,10 @@ class ProkerModel extends Model
 {
   public function tambahProgramKerja($nomorProgram, $namaProgram, $suratKeterangan)
   {
+    $query = "INSERT INTO proker VALUES
+        ('$nomorProgram', '$namaProgram', '$suratKeterangan')";
     try {
-      $this->db->query("INSERT INTO proker VALUES ('$nomorProgram', '$namaProgram', '$suratKeterangan')");
+      $this->db->query($query);
     } catch (Exception $error) {
       echo $error->getMessage();
     }
@@ -13,14 +15,16 @@ class ProkerModel extends Model
 
   public function getProgramKerja($nomorProgram)
   {
-    $result = $this->db->query("SELECT * FROM proker where nomorProgram=$nomorProgram");
+    $query = "SELECT * FROM proker WHERE nomorProgram=$nomorProgram";
+    $result = $this->db->query($query);
     return $result->fetch_assoc();
   }
 
   public function getSemuaProgramKerja()
   {
     $rows = [];
-    $result = $this->db->query("SELECT * FROM proker");
+    $query = "SELECT * FROM proker";
+    $result = $this->db->query($query);
     while ($row = $result->fetch_assoc()) {
       $rows[] = $row;
     }
@@ -30,8 +34,10 @@ class ProkerModel extends Model
 
   public function deleteProgramKerja($nomorProgram)
   {
+    $query = "DELETE FROM proker
+        WHERE nomorProgram=$nomorProgram";
     try {
-      $this->db->query("DELETE FROM proker WHERE nomorProgram=$nomorProgram");
+      $this->db->query($query);
     } catch (Exception $error) {
       echo $error->getMessage();
     }
@@ -39,8 +45,13 @@ class ProkerModel extends Model
 
   public function editProgramKerja($old_nomorProgram, $nomorProgram, $namaProgram, $suratKeterangan)
   {
+    $query = "UPDATE proker SET
+        nomorProgram = $nomorProgram,
+        namaProgram = '$namaProgram',
+        suratKeterangan = '$suratKeterangan'
+        WHERE nomorProgram = $old_nomorProgram";
     try {
-      $this->db->query("UPDATE proker SET nomorProgram = $nomorProgram, namaProgram = '$namaProgram', suratKeterangan = '$suratKeterangan' WHERE nomorProgram = $old_nomorProgram");
+      $this->db->query($query);
     } catch (Exception $error) {
       echo $error->getMessage();
     }
