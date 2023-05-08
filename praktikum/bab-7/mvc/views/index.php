@@ -21,7 +21,7 @@
                       </form>
                       <form action="index.php?url=Proker/hapusProker" method="post">
                           <input type="hidden" name="nomorProgram" value="<?= $proker['nomorProgram'] ?>">
-                          <input type="submit" value="Hapus">
+                          <input type="submit" value="Hapus" onclick="return confirm('Apakah anda yakin akan menghapus proker ini?')">
                       </form>
                   </td>
               </tr>
